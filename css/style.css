@@ -22,7 +22,7 @@ section { font-family: 'SejonghospitalBold'; }
     z-index: 999;
 }
 .loader {
-    width: 50%; height: 10%;
+    width: 240px; height: 10%;
     position: relative;
 }
 .circle {
@@ -97,13 +97,14 @@ section { font-family: 'SejonghospitalBold'; }
     }
 /* 섹션 */
 .section {
-    width: 100%; height: 100vh;
+    width: 100%;
 }
 /* 섹션-1 텍스트-1 */
 .section-1 > .text-1 {
     text-align: center;
     padding: 100px 24px 50px 24px;
     font-size: 1.5rem; line-height: 2rem;
+    transition: font-size 1.2s ease;
 }
     .section-1 > .text-1 span {
         display: inline-block;
@@ -128,8 +129,20 @@ section { font-family: 'SejonghospitalBold'; }
     }
 /* 섹션-1 텍스트-2 */
 .section-1 > .text-2 {
-    padding: 0px 24px;
+    padding: 0 24px;
+    transition: font-size 1.2s ease;
 }
     .section-1 > .text-2 span {
         font-weight: bold;
     }
+
+ /* 태블릿 */
+@media screen and (min-width:768px) {
+    /* 768 x 1024 */
+    .section-1 > .text-1 {
+        font-size: 2.5rem; line-height: 3rem;
+    }
+    .section-1 > .text-2 {
+        font-size: 2rem;
+    }
+}

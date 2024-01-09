@@ -1,0 +1,71 @@
+* { margin: 0; padding: 0; box-sizing: border-box;
+list-style: none; text-decoration: none;
+}
+body { background-color: #F6F6F6; }
+section { font-family: 'SejonghospitalBold'; }
+@font-face {
+    font-family: 'SejonghospitalBold';
+    src: url('../fonts/Sejong\ hospital\ Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('../fonts/The\ Jamsil\ 3\ Regular.ttf') format('truetype');
+}
+
+/* 헤더 */
+#header {
+    width: 100%; height: 50px;
+    font-family: 'TheJamsil5Bold';
+    position: fixed; top: 0; left: 0; z-index: 1;
+    background-color: rgba(246, 246, 246, 0.7);
+}
+    #header nav { 
+        height: 100%; display: flex; align-self: center;
+    }
+    #header ul {
+        width: 100%;
+        display: flex; align-items: center;
+        justify-content: space-between;
+    }
+    #header a {
+        padding: 0 24px; 
+        color: #5A8DF3; font-weight: bold; font-size: 1.5rem;
+    }
+/* 섹션 */
+.section {
+    width: 100%; height: 100vh;
+}
+/* 섹션-1 텍스트-1 */
+.section-1 > .text-1 {
+    text-align: center;
+    padding: 100px 24px 50px 24px;
+    font-size: 1.5rem; line-height: 2rem;
+}
+    .section-1 > .text-1 span {
+        display: inline-block;
+        font-size: 0.8rem; color: #2457BD;
+    }
+/* 섹션-1 이미지 */
+.section-1 > .img-container {
+    width: 100%;
+    overflow: hidden;
+}
+    .img-container > .img-1 > img {
+        width: 70%;
+        border-radius: 0 30px 30px 0; object-fit: cover;
+    }
+    .img-container > .img-2 {
+        display: flex; justify-content: flex-end;
+        margin-top: -10%;
+    }
+    .img-container > .img-2 > img {
+        width: 50%;
+        border-radius: 30px 0 0 30px; object-fit: cover;
+    }
+/* 섹션-1 텍스트-2 */
+.section-1 > .text-2 {
+    padding: 0px 24px;
+}
+    .section-1 > .text-2 span {
+        font-weight: bold;
+    }

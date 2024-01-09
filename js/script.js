@@ -1,6 +1,10 @@
 window.addEventListener("load", () => {
     // const tl = gsap.timeline();
     // tl.call(section1Ani);
+
+    // 로딩이 완료되면 로딩 화면 숨기기
+    const loadingContainer = document.querySelector("#loading-screen");
+    loadingContainer.style.display = "none";
     section1Ani();
 });
 // 섹션-1 애니

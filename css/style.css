@@ -57,10 +57,9 @@ section { font-family: 'SejonghospitalBold'; }
 /* ------------------------------------------------------------ */
 /* 헤더 */
 #header {
-    width: 100%; height: 60px;
+    width: 100%; height: 50px;
     font-family: 'TheJamsil5Bold';
     position: fixed; top: 0; left: 0; z-index: 1;
-    /* background-color: rgba(246, 246, 246, 0.7); */
 }
     #header nav { 
         height: 100%; display: flex; align-self: center;
@@ -71,11 +70,11 @@ section { font-family: 'SejonghospitalBold'; }
         justify-content: space-between;
     }
     #header a {
-        padding: 0 24px; 
+        padding: 0 24px;
         color: #5A8DF3; font-size: 1.5rem;
     }
 /* 섹션 */
-.section { width: 100%; height: 100vh; position: relative; }
+.section { width: 100%; min-height: 100vh; position: relative; }
 /* 섹션-1 텍스트-1 */
 .section-1 > .text-1 {
     text-align: center;
@@ -88,41 +87,31 @@ section { font-family: 'SejonghospitalBold'; }
         transition: font-size 1.2s ease;
     }
 /* 섹션-1 이미지 */
-.section-1 > .img-container { width: 100%; overflow: hidden; }
-    .img-container > .img-1 > img {
-        width: 70%; object-fit: cover;
-        border-radius: 0 30px 30px 0;
-    }
-    .img-container > .img-2 {
-        display: flex; justify-content: flex-end;
-        margin-top: -10%;
-    }
-    .img-container > .img-2 > img {
-        width: 50%; object-fit: cover;
-        border-radius: 30px 0 0 30px;
-    }
+.section-1 > .img-container {
+    display: grid; width: 100%; height: 30vh;
+    overflow: hidden;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 50%);
+    gap: 5px; padding: 0 24px;
+    grid-template-areas: 
+        "a a b"
+        "c d d" 
+}
+.img { width: 100%; height: 100%; object-fit: cover; }
+.img1 { grid-area: a; }
+.img2 { grid-area: b; }
+.img3 { grid-area: c; }
+.img4 { grid-area: d; }
 /* 섹션-1 텍스트-2 */
-.section-1 > .text-2 { padding: 0 24px; }
+.section-1 > .text-2 { padding: 0 24px; margin-top: 50px; }
     .section-1 > .text-2 span { font-weight: bold; }
-/* 태블릿, 피시용 백그라운드 */
-.section-1-bg-img {
-    display: none; position: relative; overflow: hidden;
-    width: 90%; height: 40vh; margin: 0 auto;
-}
-.section-1-bg-img::after {
-    width: 100%; height: 100vh;
-    content: ""; top: 0; left: 0; position: absolute;
-    background-image: url("../images/section-1-img2.jpg");
-    background-position: center; background-attachment: fixed;
-    background-repeat: no-repeat; background-size: cover;
-}
+
  /* 태블릿 */
-@media screen and (min-width:600px) {
+@media screen and (min-width:768px) {
     /* 768 x 1024 */
-    .section-1-bg-img { display: block; }
-    .img-container { display: none; }
+    .section-1 > .text-1 { font-size: 2rem; }
     .section-1 > .text-1 > span > span { font-size: 1rem; }
-    .section-1 > .text-2 { padding-top: 50px;; font-size: 1.5rem; }
+    .section-1 > .text-2 { font-size: 1.5rem; }
 }
 @media screen and (min-width:1200px) {
     

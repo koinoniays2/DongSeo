@@ -26,5 +26,5 @@ function section1Ani() {
     // 이미지 애니
     .from(imgSection1[0], { opacity:0, x:-500, duration: 1 }, "-=0.8")
     .from(imgSection1[1], { opacity:0, x: 500, duration: 1 }, "-=0.8")
-    .from(pText2Section2, { x:-100, opacity: 0, duration: 1 }, "-=0.4");
+    .from(pText2Section2, { y:100, opacity: 0, duration: 1 }, "-=0.5");
 };

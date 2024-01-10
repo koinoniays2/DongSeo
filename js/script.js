@@ -10,7 +10,7 @@ window.addEventListener("load", () => {
 // 섹션-1 애니
 let pText1Section1 = document.querySelectorAll(".section-1 > .text-1 > p");
 let spanText1Section1 = document.querySelectorAll(".section-1 > .text-1 > span > span");
-let pText2Section1 = document.querySelector(".section-1 > .text-2 > p");
+let pText2Section1 = document.querySelector(".section-1 .text-2 > p");
 let rotateImg = document.querySelectorAll(".img-container > .img");
 
 let tl = gsap.timeline();
@@ -24,6 +24,6 @@ function section1Ani() {
         opacity: 1, y: 0, duration: 1, stagger: 0.2
     },'-=0.8')
     .fromTo(rotateImg, { opacity: 0, rotateY: 0 }, {
-        opacity: 1, rotateY: 180,  duration: 1, stagger: 0.5 }, "-=0.5")
-    .from(pText2Section1, { opacity: 0,  x:-50, duration: 1 }, "-=0.5");
+        opacity: 1, rotateY: 180,  duration: 1, stagger: 0.5 }, "-=0.8")
+    .from(pText2Section1, { opacity: 0,  y:50, duration: 1 }, "-=0.5");
 };

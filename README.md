@@ -2,7 +2,7 @@
 클라이언트 : 한의원을 대상으로 약재 판매 및 수입/제조 회사  
 사이트 주 타겟 : 한의사
 ## Day 1
-section-1 Mobile Mode
+#### section-1 Mobile Mode
 - 그리드  
 360 x 640 columns 4, gutter 24, width 60  
 - 컬러  

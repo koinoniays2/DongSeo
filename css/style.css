@@ -94,7 +94,7 @@ section { font-family: 'SejonghospitalBold'; }
 .section-1 .img-container {
     position: relative;
     transition: height 1.2s ease, width 1.2s ease;
-    display: grid; width: 100%; height: 30vh;
+    display: grid; width: 100%; height: 35vh;
     overflow: hidden;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 50%);
@@ -103,7 +103,8 @@ section { font-family: 'SejonghospitalBold'; }
         "a a b"
         "c d d" 
 }
-.section-1 .img-container .img { width: 100%; height: 100%; object-fit: cover; }
+.section-1 .img-container .img { width: 100%; height: 100%; object-fit: cover;
+    transition: scale 0.5s ease; }
 .img1 { grid-area: a; }
 .img2 { grid-area: b; }
 .img3 { grid-area: c; }
@@ -115,10 +116,16 @@ section { font-family: 'SejonghospitalBold'; }
     content: "";
     position: absolute; top: 0; left: 0;
     width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); z-index: 1;
+    background-color: rgba(0, 0, 0, 0.4); z-index: 10;
+    animation: fadeIn 0.7s ease;
 }
 .section-1 .img > p { position: absolute; bottom: 50%; right: 50%; transform: translate(50%, 50%);
-    font-weight: bold; color: white; z-index: 2; display: none; }
+    font-weight: bold; color: white; z-index: 11; display: none;
+    animation: fadeIn 0.7s ease; }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 /* 섹션-1 텍스트-2 */
 .section-1 .text-2 { padding: 0 24px; margin-top: 50px; }
     .section-1 .text-2 span { font-weight: bold; }
@@ -144,4 +151,23 @@ section { font-family: 'SejonghospitalBold'; }
         width: 50%; height: 55vh;
     }
     .section-1 .text-2 { font-size: 1.8rem; }
+}
+/* ------------------------------------------------------------ */
+/* 섹션-2 */
+.section-2 .bg-img {
+    width: 100%; height: 30vh;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.section-2 .bg-img::after {
+    content: "";
+    width: 100%; height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    background-image: url("../images/section2-bg-귤농장.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
 }

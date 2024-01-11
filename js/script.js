@@ -1,6 +1,4 @@
 window.addEventListener("load", () => {
-    // const tl = gsap.timeline();
-    // tl.call(section1Ani);
     // 로딩이 완료되면 로딩 화면 숨기기
     const loadingContainer = document.querySelector("#loading-screen");
     loadingContainer.style.display = "none";
@@ -9,13 +7,15 @@ window.addEventListener("load", () => {
     // 섹선-2 애니메이션 실행
     section2Banner();
 });
-// 섹션-1 애니
-let pText1Section1 = document.querySelectorAll(".section-1 > .text-1 > p");
-let spanText1Section1 = document.querySelectorAll(".section-1 > .text-1 > span > span");
-let pText2Section1 = document.querySelector(".section-1 .text-2 > p");
-let rotateImg = document.querySelectorAll(".img-container > div");
 
-let tl = gsap.timeline();
+gsap.registerPlugin(ScrollTrigger);
+// 섹션-1 애니
+const pText1Section1 = document.querySelectorAll(".section-1 > .text-1 > p");
+const spanText1Section1 = document.querySelectorAll(".section-1 > .text-1 > span > span");
+const pText2Section1 = document.querySelector(".section-1 .text-2 > p");
+const rotateImg = document.querySelectorAll(".img-container > div");
+
+const tl = gsap.timeline();
 function section1Ani() {
     tl.from(spanText1Section1, { // 텍스트 애니
         opacity: 0, y: -10, duration: 0.5,
@@ -30,7 +30,7 @@ function section1Ani() {
         .from(pText2Section1, { opacity: 0, y: 50, duration: 1 }, "-=0.5"); // 텍스트 애니
 };
 // 섹션-1 이미지 마우스 오버/아웃
-let imgs = document.querySelectorAll(".section-1 .img-container > .img");
+const imgs = document.querySelectorAll(".section-1 .img-container > .img");
 imgs.forEach((item) => {
     item.addEventListener("mouseover", (e) => {
         const p = e.currentTarget.querySelector("p");
@@ -50,15 +50,18 @@ imgs.forEach((item) => {
 // 섹션-2 배너 애니
 const section2 = document.querySelector(".section-2");
 const section2BannerImg = section2.querySelector(".bg-img");
-gsap.registerPlugin(ScrollTrigger);
 const section2Banner = () => {
-    gsap.from(section2BannerImg, {
-        width: 0,
-        duration: 1,
-        scrollTrigger: {
+    gsap.to(section2BannerImg, {
+        height: '40vh',
+        duration: 2,
+        ease: "power4.out",
+        scrollTrigger : {
             trigger: section2,
-            start: "top+=100 bottom",
-            toggleActions: "restart"
+            start: "top bottom",
+            toggleActions: "restart",
+            onEnter: () => {
+                // section2BannerImg 애니메이션이 시작될 때 실행되는 코드
+            }
         }
-    });
+    })
 }

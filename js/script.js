@@ -49,11 +49,11 @@ imgs.forEach((item) => {
 });
 // 섹션-2 배너 애니
 const section2 = document.querySelector(".section-2");
+const section2BannerImg = section2.querySelector(".bg-img");
 gsap.registerPlugin(ScrollTrigger);
 const section2Banner = () => {
-    gsap.from(section2, {
+    gsap.from(section2BannerImg, {
         width: 0,
-        opacity: 0,
         duration: 1,
         scrollTrigger: {
             trigger: section2,

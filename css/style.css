@@ -102,13 +102,14 @@ section { font-family: 'SejonghospitalBold'; }
     gap: 5px; padding: 0 24px;
     grid-template-areas: 
         "a a b"
-        "c d d" 
+        "c d e" 
 }
 .section-1 .img-container .img { width: 100%; height: 100%; object-fit: cover; }
 .img1 { grid-area: a; }
 .img2 { grid-area: b; }
 .img3 { grid-area: c; }
 .img4 { grid-area: d; }
+.img5 { grid-area: e; }
 
 /* ----------자바스크립트 */
 .show-bg::after {
@@ -153,68 +154,82 @@ section { font-family: 'SejonghospitalBold'; }
     .section-1 .text-2 { font-size: 1.8rem; }
 }
 /* ------------------------------------------------------------ */
-/* 섹션-2 */
 /* 백그라운드 이미지 */
-.section-2 .bg-img {
-    width: 100%; height: 40vh;
+.bg-img {
+    width: 100%; height: 50vh;
     position: relative;
     background-color: rgba(0, 0, 0, 0.4);
-    margin-bottom: 50px;
+    margin: 50px 0;
 }
-.section-2 .bg-img::after {
+.bg-img::after {
     content: "";
     width: 100%; height: 100%;
     position: absolute;
     top: 0; right: 0;
-    background-image: url("../images/section2-bg-귤농장.jpg");
+    background-image: url("../images/section2-도라지꽃.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     z-index: -1;
 }
-/* 섹션-2 책 이미지*/
+/* ------------------------------------------------------------ */
+/* 섹션-2 */
+.section-2 {
+    display: flex; flex-direction: column; align-items: center;
+}
+/* 섹션-2 책 컨테이너*/
 .section-2-container {
-    position: relative; 
-    width: 90%; height: 50vh; margin: 0 auto;
-    display: flex; justify-content: flex-end; 
+    position: relative;
+    width: 90%; height: 50vh;
     perspective: 1000px;
     transition: height 1.2s ease, width 1.2s ease;
+    margin-top: 100px;
 }
+/* 책 겹치기 */
 .section-2-container > .page {
-    position: absolute; top: 0; right: 0px;
-    width: 50%; height: 70%; overflow: hidden;
-    /* box-shadow: 0 0 2px rgba(0, 0, 0, 0.4), -2px 0 2px rgba(0, 0, 0, 0.4); */
-} 
+    position: absolute; top: 0; left: 50%;
+    height: 80%; overflow: hidden;
+}
+/* 책 이미지 */
+.section-2-container > .page > img {
+    width: 100%; height: 100%; object-fit: contain;
+}
+/* 책 표지 */
 .section-2-container > #page-1 {
-    transform-origin: left center; 
     /* left : 변환의 기준점이 요소의 왼쪽 가장자리 center : 수직 방향의 중앙 */
+    transform-origin: left center; 
     transition: transform 0.5s ease-in, opacity 0.5s ease-in;
-    cursor: pointer;
-    z-index: 1;
+    cursor: pointer; z-index: 1;
 }
-.section-2-container > #page-1 > img {
-    width: 100%; height: 100%; object-fit: cover;
-}
-.section-2-container > #page-2 {
-    border: 1px solid #d0bfa1;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-    display: flex; flex-direction: column; justify-content: space-evenly;
-    text-align: center;
-}
-.section-2-container > #page-2 > span { 
-    display: inline-block; padding:0 10px;
-}
+/* 책 표지 클릭 시 책 넘어가기 */
 .clicked {
     transform: rotateY(-180deg);
-    opacity: 0.8;
+    opacity: 0.2;
 }
+/* 책 텍스트 배경 */
+.section-2-container > #page-2 > img {
+    opacity: 0.1;
+}
+/* 텍스트 영역 (책의 높이,너비와 같게 하여 중간 정렬)*/
+.section-2-container > .text-1 {
+    position: absolute; height: 80%; width: 100%;
+    display: flex; align-items: center; justify-content: center;
+}
+.section-2-container > .text-1 > p {
+    transform: scale(0);
+    transition: transform 0.8s ease-out , font-size 1.2s ease;
+    font-size: 1.25rem; line-height: 1.5rem;
+    z-index: 99;
+}
+/* 클릭 버튼 */
 .book-click {
     position: absolute;
-    left: 0; top: 0; width: 50%; height: 60%;
-    display: flex; justify-content: center; align-items: center;
-    font-size: 1.5rem; font-weight: bold;
+    bottom: 30px; left: 50%;
+    display: inline-block;
+    font-size: 1.5rem;
 }
+/* 클릭 버튼 모션 */
 .book-click > span > i {
     opacity: 0;
     animation: move-the-sign 1.5s infinite;
@@ -224,7 +239,7 @@ section { font-family: 'SejonghospitalBold'; }
         transform: translate(0, 0); opacity: 0;
     }
     50% {
-        transform: translate(10px, 0); opacity: 0.5;
+        transform: translate(0, -10px); opacity: 0.5;
     }
     70% {
         transform: translate(0, 0); opacity: 1;
@@ -235,5 +250,7 @@ section { font-family: 'SejonghospitalBold'; }
 }
 /* 섹션-2 미디어 쿼리 */
 @media screen and (min-width:600px) {
-
+    .section-2-container > .text-1 > p {
+        font-size: 1.5rem; line-height: 2rem;
+    }
 }

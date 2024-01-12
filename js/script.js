@@ -56,6 +56,14 @@ imgs.forEach((item) => {
 });
 
 const page1 = document.querySelector("#page-1");
+const pOn = document.querySelector(".section-2-container > .text-1 > p");
 page1.addEventListener("click", () => {
     page1.classList.toggle("clicked");
-})
+    // 클릭 시 텍스트 on
+    pOn.classList.toggle("on");
+    if (pOn.classList.contains("on")) {
+        pOn.style.transform = "scale(1)";
+    } else {
+        pOn.style.transform = "scale(0)";
+    }
+});

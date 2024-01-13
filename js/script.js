@@ -92,18 +92,20 @@ page1.addEventListener("click", () => {
         pOn.style.transform = "scale(0)";
     }
 });
-//--------------------Partners--------------------
+//--------------------섹션-3--------------------
 const partners = document.querySelector("#partners");
 const partnersP = document.querySelector("#partners > p")
 const partnersImg = document.querySelectorAll("#partners > .logo-container > img");
+const section3Text = document.querySelectorAll(".section-3 > .text-container > p");
 function partnersAni() {
     const tl = gsap.timeline();
-    tl.from(partners, { opacity:0, x: -1000, duration: 1, },"-=0.5") // partners
-    .from(partnersP, { opacity:0, y: 20, duration: 0.5, },"-=0.1") // p 애니
+    tl.from(partners, { opacity:0, x: -1000, duration: 0.5, }) // partners
+    .from(partnersP, { opacity:0, y: 20, duration: 0.5, }) // p 애니
     .from(partnersImg, { opacity:0, scale: 0, stagger: 0.3, ease: "back.out", duration: 0.5 },"-=0.2") // 로고 애니
+    .from(section3Text, { opacity:0, y:50, duration:1, stagger:0.3 }, "-=0.3")
     ScrollTrigger.create({
-        trigger: ".section-2-container",
-        start: "bottom center",
+        trigger: ".section-3",
+        start: "top center",
         animation: tl
     });
     ScrollTrigger.refresh();

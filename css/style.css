@@ -88,7 +88,8 @@ section, div { font-family: 'SejonghospitalBold'; }
     transition: font-size 1.2s ease;
 }
 /* ------------------------------------------------------------ */
-/* PC용 컨테이너 */
+/* 섹션-1 */
+/* 줄바꿈용 컨테이너 */
 .section-1 .container {
     display: flex; flex-wrap: wrap;
 }
@@ -137,8 +138,9 @@ section, div { font-family: 'SejonghospitalBold'; }
     #header { height: 60px; }
     #header a { font-size: 2em; }
     .section-1 > .text-container, .section-2 > .text-container { font-size: 2rem; line-height: 2.5rem;}
-    .section-1 > .text-container > span > span, .section-2 > .text-container > span > span { font-size: 1rem; }
-    .section-1 .text-2 { font-size: 1.5rem; }
+    .section-1 > .text-container > span > span, .section-2 > .text-container > span > span { 
+        font-size: 1rem; }
+    .section-1 .text-2, .section-3 > .text-container { font-size: 1.5rem; }
     .section-1 .container { justify-content: center; }
     .section-1 .img-container { width: 80%; height: 40vh; gap: 10px }
 }
@@ -146,13 +148,14 @@ section, div { font-family: 'SejonghospitalBold'; }
     #header { height: 80px; }
     #header a { font-size: 2.5em; }
     .section-1 > .text-container, .section-2 > .text-container { font-size: 2.5rem; line-height: 3rem;}
-    .section-1 > .text-container > span > span, .section-2 > .text-container > span > span { font-size: 1.5rem; }
+    .section-1 > .text-container > span > span, .section-2 > .text-container > span > span, .section-3 > #partners 
+    { font-size: 1.5rem; }
     .section-1 .container { align-items: center; }
     .section-1 .img-container {
         margin: 0; gap: 15px;
         width: 50%; height: 55vh;
     }
-    .section-1 .text-2 { font-size: 1.8rem; }
+    .section-1 .text-2, .section-3 > .text-container  { font-size: 1.8rem; }
 }
 /* ------------------------------------------------------------ */
 /* 백그라운드 이미지 */
@@ -175,7 +178,7 @@ section, div { font-family: 'SejonghospitalBold'; }
 }
 /* ------------------------------------------------------------ */
 /* 섹션-2 */
-.section-2 {
+.section-2, .section-3 {
     display: flex; flex-direction: column; align-items: center;
 }
 /* 섹션-2 책 컨테이너*/
@@ -253,11 +256,14 @@ section, div { font-family: 'SejonghospitalBold'; }
         font-size: 1.5rem; line-height: 2rem;
     }
 }
+/* ------------------------------------------------------------ */
+/* 섹션-3 */
 /* 파트너 */
 #partners {
     width: 100%; height: 30vh; overflow: hidden; position: relative;
     display: flex; flex-direction: column; 
     justify-content: space-evenly; align-items: center;
+    margin-top: 100px;
 }
 #partners::after {
     content: "";
@@ -278,4 +284,16 @@ section, div { font-family: 'SejonghospitalBold'; }
 #partners > .logo-container > img {
     width: 40%; height: 50%;
     object-fit: contain;
+}
+/* 섹션-3 텍스트 */
+.section-3 > .text-container { 
+    display: flex; flex-wrap: wrap;
+    margin-top: 50px;
+    width: 90%;
+ }
+ /* 섹션-3 미디어쿼리 */
+ @media screen and (min-width:1200px) {
+    .section-3 > .text-container { 
+        width: 45%;
+     }
 }

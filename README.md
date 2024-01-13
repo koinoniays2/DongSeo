@@ -9,6 +9,8 @@
 - 폰트  
 header 더잠실체, body 세종병원체
 ---
+## 실행화면
+[동서한약](https://koinoniays2.github.io/DongSeo/)
 ## Day 1 : section-1 Mobile Mode
 - transition: font-size 1.2s ease;  
 화면 리사이즈에 따른 폰트 변화

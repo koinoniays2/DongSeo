@@ -7,6 +7,8 @@ window.addEventListener("load", () => {
     section1Ani();
     // 섹션-2 애니메이션 실행
     section2Ani();
+    // Partners 애니메이션 실행
+    partnersAni();
 });
 gsap.registerPlugin(ScrollTrigger);
 // --------------------섹션-1--------------------
@@ -64,12 +66,12 @@ function section2Ani() {
     const tl = gsap.timeline();
     tl.from(spanText1Section2, { // span 애니
         opacity: 0, y: -10, duration: 0.5,
-        yoyo: true, stagger: { from: 'start', each: 0.1 }
+        stagger: { from: 'start', each: 0.1 }
     })
         .fromTo(pText1Section2, { opacity: 0, y: 50 }, { // p 애니
             opacity: 1, y: 0, duration: 1, stagger: 0.2
-        }, '-=0.8')
-        .from(bookImg, { x: -1000, duration: 1 }, "-=1")
+        }, '-=1')
+        .from(bookImg, { x: 1000, duration: 1.5, ease: "power3.out" }, "-=1.3") // 책 애니
     ScrollTrigger.create({
         trigger: ".section-2",
         start: "top center",
@@ -90,3 +92,19 @@ page1.addEventListener("click", () => {
         pOn.style.transform = "scale(0)";
     }
 });
+//--------------------Partners--------------------
+const partners = document.querySelector("#partners");
+const partnersP = document.querySelector("#partners > p")
+const partnersImg = document.querySelectorAll("#partners > .logo-container > img");
+function partnersAni() {
+    const tl = gsap.timeline();
+    tl.from(partners, { opacity:0, x: -1000, duration: 1, },"-=0.5") // partners
+    .from(partnersP, { opacity:0, y: 20, duration: 0.5, },"-=0.1") // p 애니
+    .from(partnersImg, { opacity:0, scale: 0, stagger: 0.3, ease: "back.out", duration: 0.5 },"-=0.2") // 로고 애니
+    ScrollTrigger.create({
+        trigger: ".section-2-container",
+        start: "bottom center",
+        animation: tl
+    });
+    ScrollTrigger.refresh();
+}

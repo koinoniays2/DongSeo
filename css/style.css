@@ -297,3 +297,30 @@ section, div { font-family: 'SejonghospitalBold'; }
         width: 45%;
      }
 }
+/* 푸터 */
+#footer {
+    width: 100%;
+    background-color: #a3ccf4;
+    padding-bottom: 24px;
+}
+.footer-wrap {
+    display: flex; align-items: center; justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%; height: 100%;
+    padding-top: 24px;
+}
+    .footer-wrap > .title > span {
+        font-family: 'TheJamsil5Bold';
+        font-weight: bold; color: #2457BD; font-size: 1.5rem;
+    }
+.footer-wrap > .text-container {
+    display: flex; flex-direction: column; padding-top: 5px;
+}
+.footer-wrap > .text-container > p {
+    font-family: 'TheJamsil5Bold';
+    padding-bottom: 5px;
+    color: #F6F6F6; font-size: 0.8rem;
+}
+.footer-wrap > .text-container > p > i {
+    color: #2457BD; padding-right: 10px;
+}

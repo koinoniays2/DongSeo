@@ -97,6 +97,7 @@ body { background-color: #F6F6F6; font-family: 'Sejonghospital'; }
 }
 /* ------------------------------------------------------------ */
 /* 섹션-1 */
+.section-1 { height: 100vh; }
 /* 줄바꿈용 컨테이너 */
 .section-1 > .wrap {
     display: flex;

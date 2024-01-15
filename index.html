@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/index_style.css" rel="stylesheet" type="text/css" />
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/96b5911d82.js" crossorigin="anonymous"></script>
     <!-- gsap -->
@@ -28,30 +28,38 @@
     <!-- 헤더 -->
     <header id="header">
         <nav>
-            <ul>
-                <li><a href="#">동 서 한 약</a></li>
-                <li><a href="#"><i class="fa-solid fa-bars"></i></a></li>
-            </ul>
+            <div id="logo">
+                <a href="#">동 서 한 약</a>
+            </div>
+            <input id="toggle-btn" type="checkbox"/>
+            <!-- <ul id="toggle-menu">
+                <li><a href="#">메뉴</a></li>
+                <li><a href="#">메뉴</a></li>
+                <li><a href="#">메뉴</a></li>
+            </ul> -->
+            <label id="toggle-icon" for="toggle-btn">
+                <div>
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </label>
         </nav>
     </header>
     <!-- ------------섹션-1------------------------------------ -->
     <section class="section section-1">
-        <!-- 텍스트-1 -->
-        <article class="text-container">
-            <span>
-                <span>D</span>
-                <span>O</span>
-                <span>N</span>
-                <span>G</span>
-                <span>S</span>
-                <span>E</span>
-                <span>O</span>
-            </span>
+        <!-- 타이틀 -->
+        <article class="title">
+            <span>D</span>
+            <span>O</span>
+            <span>N</span>
+            <span>G</span>
+            <span>S</span>
+            <span>E</span>
+            <span>O</span>
             <p>정직함을 기반으로</p>
             <p>정확함을 선사합니다.</p>
         </article>  
         <!-- 이미지 -->
-        <div class="container">
+        <div class="wrap">
             <article class="img-container">
                 <div class="img img1">
                     <img class="img" src="images/section1-황기.png" alt="황기" />
@@ -75,35 +83,35 @@
                 </div>
             </article>
             <!-- 텍스트-2 -->
-            <article class="text-2">
-                <p><span>동서한약</span>은<br /><br />
+            <article class="description">
+                <p><b>동서한약</b>은<br /><br />
                     직접 검증하지 않은 제품은 판매하지 않고,<br />
                     선별된 제품들만 제공하고 있습니다.</p>
             </article>
         </div>
     </section>
-    <div class="bg-img"></div>
+    <div id="bg-container">
+        <div class="bg-img"></div>
+    </div>
     <!-- ------------섹션-2------------------------------------ -->
     <section class="section section-2">
-        <!-- 텍스트-1 -->
-        <article class="text-container">
-            <span>
-                <span>O</span>
-                <span>U</span>
-                <span>R&nbsp</span>
-                <span>&nbspP</span>
-                <span>R</span>
-                <span>O</span>
-                <span>M</span>
-                <span>I</span>
-                <span>S</span>
-                <span>E</span>
-            </span>
+        <!-- 타이틀 -->
+        <article class="title">
+            <span>O</span>
+            <span>U</span>
+            <span>R&nbsp</span>
+            <span>&nbspP</span>
+            <span>R</span>
+            <span>O</span>
+            <span>M</span>
+            <span>I</span>
+            <span>S</span>
+            <span>E</span>
             <p>신뢰를 약속드리기 위한</p>
-            <p>동서한약만의 방식</p>
+            <p>동서만의 방식</p>
         </article>
-        <article class="section-2-container">
-            <div class="text-1">
+        <article id="book-container">
+            <div class="book-text">
                 <p>
                     <b>"새로쓴 사상의학"</b>을 바탕으로<br /><br />
                     한의원 처방에 맞는<br />
@@ -121,6 +129,7 @@
             </div>
         </article>
     </section>
+    <!-- ------------섹션-3------------------------------------ -->
     <section class="section section-3">
         <div id="partners">
             <p>P A R T N E R S</p>
@@ -129,12 +138,13 @@
                 <img src="images/휴먼허브.png" alt="휴면허브 로고"/>
             </div>
         </div>
-        <article class="text-container">
+        <article class="description">
             <p>믿을 수 있는 파트너 회사와 협력하여&nbsp</p>
             <p><b>우수한 품질</b>을 가진 제품만을 엄선합니다.&nbsp</p><br /><br />
             <p>이를 통해 안정성과 높은 만족도를&nbsp</p>
             <p>제공하고 있습니다.</p>
         </article>
+        <div id="partners-b-img"></div>
     </section>
     <footer id="footer">
         <article class="footer-wrap">

@@ -78,7 +78,7 @@ body { background-color: #F6F6F6; font-family: 'Sejonghospital'; }
 /* --------------------공통-------------------- */
 /* 섹션 */
 .section { 
-    width: 100%; max-height: 100vh; 
+    width: 100%;
     position: relative; overflow: hidden;
 }
 /* 섹션 타이틀 */
@@ -97,7 +97,6 @@ body { background-color: #F6F6F6; font-family: 'Sejonghospital'; }
 }
 /* ------------------------------------------------------------ */
 /* 섹션-1 */
-.section-1 { height: 100vh; }
 /* 줄바꿈용 컨테이너 */
 .section-1 > .wrap {
     display: flex;
@@ -166,8 +165,8 @@ body { background-color: #F6F6F6; font-family: 'Sejonghospital'; }
 /* ------------------------------------------------------------ */
 /* 백그라운드 이미지 */
 #bg-container {
-    width: 100%; height: 50vh;
-    display: flex; align-items: center;
+    width: 100%; height: 40vh;
+    display: flex; align-items: flex-end;
 }
 .bg-img {
     width: 100%; height: 30vh;
@@ -194,7 +193,7 @@ body { background-color: #F6F6F6; font-family: 'Sejonghospital'; }
 /* 섹션-2 책 컨테이너*/
 #book-container {
     position: relative;
-    width: 90%; height: 60vh;
+    width: 90%; height: 50vh;
     perspective: 1000px;
     transition: var(--size-transition);
 }
@@ -240,7 +239,8 @@ body { background-color: #F6F6F6; font-family: 'Sejonghospital'; }
     position: absolute;
     bottom: 30px; left: 50%;
     display: inline-block;
-    font-size: 1.5rem;
+    font-size: 1.5rem; font-weight: bold;
+    z-index: 99;
 }
 /* 클릭 버튼 모션 */
 .book-click > span > i {
@@ -253,10 +253,7 @@ body { background-color: #F6F6F6; font-family: 'Sejonghospital'; }
         transform: translate(0, 0); opacity: 0;
     }
     50% {
-        transform: translate(0, -10px); opacity: 0.5;
-    }
-    70% {
-        transform: translate(0, 0); opacity: 1;
+        transform: translate(0, -10px); opacity: 1;
     }
     100% {
         transform: translate(0, 0); opacity: 0;

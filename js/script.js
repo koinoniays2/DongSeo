@@ -111,14 +111,14 @@ const sectionDescription3 = document.querySelectorAll(".section-3 > .description
 function sectionAni3() {
     const tl = gsap.timeline();
     // partners 배경
-    tl.from(partners, { opacity:0, x: 1000, duration: 0.5, })
+    tl.from(partners, { opacity:0, x: 1000, duration: 0.8, })
     // 타이틀
     .from(partnersP, { opacity:0, y: 20, duration: 0.5, })
     // 로고 이미지
     .from(partnersImg, { opacity:0, scale: 0, stagger: 0.3, ease: "back.out", duration: 0.5 },"-=0.2")
     .from(sectionDescription3, { opacity:0, y:50, duration:1, stagger:0.3 }, "-=0.3")
     // partners bottom 배경
-    .from(partnersB, { opacity:0, x: -1000, duration: 0.5, },"-=3")
+    .from(partnersB, { opacity:0, x: -1000, duration: 0.8, },"-=3")
     ScrollTrigger.create({
         trigger: ".section-3",
         start: "top center",

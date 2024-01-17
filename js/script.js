@@ -3,6 +3,8 @@ window.addEventListener("load", () => {
     const loadingContainer = document.querySelector("#loading-screen");
     setTimeout(() => {
         loadingContainer.style.display = "none";
+        // 헤더 애니메이션
+        headerAni();
         // 섹션-1 애니메이션 실행
         sectionAni1();
         // 섹션-2 애니메이션 실행
@@ -13,6 +15,18 @@ window.addEventListener("load", () => {
 });
 
 gsap.registerPlugin(ScrollTrigger);
+// --------------------헤더--------------------
+const header = document.querySelector("#header");
+function headerAni() {
+    gsap.to(header, {
+        backgroundColor: "rgba(246, 246, 246, 0.6)",
+        scrollTrigger : {
+            trigger: "header",
+            start: "top+=50px top",
+            scrub: true
+        }
+    })
+}
 // --------------------섹션-1--------------------
 const sectionTitleSpan1 = document.querySelectorAll(".section-1 > .title > span");
 const sectionTitleP1 = document.querySelectorAll(".section-1 > .title > p");

@@ -65,7 +65,11 @@ body { background-color: #F6F6F6; font-family: 'Sejonghospital'; }
 }
     #header nav { 
         width: 90%; height: 100%;
-        display: flex; justify-content: space-between; align-items: center;
+        display: flex; 
+        justify-content: space-between; align-items: flex-end;
+    }
+    #header #logo a {
+        display: flex; align-items: flex-end;
     }
     #header #toggle-btn {
         display: none; /* 인풋 none */

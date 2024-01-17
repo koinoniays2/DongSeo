@@ -60,17 +60,17 @@ body { background-color: #F6F6F6; font-family: 'Sejonghospital'; }
 #header {
     width: 100%; height: 50px;
     position: sticky; top: 0; left: 0; z-index: 99;
+    display: flex; justify-content: center;
     font-family: 'TheJamsil5';
 }
     #header nav { 
-        width: 100%; height: 100%;
+        width: 90%; height: 100%;
         display: flex; justify-content: space-between; align-items: center;
     }
     #header #toggle-btn {
-        display: none;
+        display: none; /* 인풋 none */
     }
     #header #logo a, #header #toggle-icon i {
-        padding: 0 24px;
         color: #5A8DF3; font-size: 1.5rem;
         cursor: pointer;
     }
@@ -80,36 +80,39 @@ body { background-color: #F6F6F6; font-family: 'Sejonghospital'; }
 .section { 
     width: 100%;
     position: relative; overflow: hidden;
+    display: flex; flex-direction: column; align-items: center;
 }
 /* 섹션 타이틀 */
 .section > .title {
+    width: 90%; 
     text-align: center;
-    padding: 50px 24px;
-}
-.section > .title > p { 
-    font-size: 1.5rem; line-height: 2rem; 
-    transition: var(--font-transition);
+    margin-top: 50px;
 }
 .section > .title > span {
     display: inline-block; margin-bottom: 10px;
     font-size: 0.8rem; color: #2457BD;
     transition: var(--font-transition);
 }
+.section > .title > p { 
+    font-size: 1.5rem; line-height: 2rem; 
+    transition: var(--font-transition);
+}
 /* ------------------------------------------------------------ */
 /* 섹션-1 */
 /* 줄바꿈용 컨테이너 */
 .section-1 > .wrap {
-    display: flex;
-    flex-wrap: wrap; padding: 0 24px;
+    display: flex; flex-wrap: wrap;
+    justify-content: center;
+    width: 90%; margin-top: 50px;
 }
 /* 섹션-1 이미지 그리드 */
 .section-1 .img-container {
-    transition: var(--size-transition);
     position: relative;
-    display: grid; width: 100%; height: 35vh;
     overflow: hidden;
-    grid-template-columns: repeat(3, 1fr);
+    display: grid; width: 100%; height: 40vh;
+    transition: var(--size-transition);
     grid-template-rows: repeat(2, 50%);
+    grid-template-columns: repeat(3, 1fr);
     gap: 5px;
     grid-template-areas: 
         "a a b"
@@ -146,29 +149,25 @@ body { background-color: #F6F6F6; font-family: 'Sejonghospital'; }
 
  /* 태블릿 */
 @media screen and (min-width:600px) {
-    /*  */
+    /* 공통 */
     .section > .title > span { font-size: 1rem; }
     .section > .title > p { font-size: 1.7rem; line-height: 2.2rem; }
-    .section .description { font-size: 1.3rem; }
-    /*  */
-    .section-1 .wrap { justify-content: center; }
-    .section-1 .img-container { width: 80%; height: 45vh; gap: 10px }
+    /* section-1 */
+    .section-1 .description { font-size: 1.4rem; padding: 0 16px;}
+    .section-1 .img-container { height: 50vh; gap: 10px }
 }
-@media screen and (min-width:960px) {
-    /*  */
-    .section .description { font-size: 1.4rem; padding-left: 24px;}
-    /*  */
+@media screen and (min-width:1024px) {
+    /* max-width */
+    #header nav { max-width: 1200px; }
+    .section-1 .title, .section-1 .wrap  { max-width: 1200px; }
+    /* section-1 */
     .section-1 .wrap { align-items: center; }
     .section-1 .img-container { width: 50%; height: 60vh; }
-    .section-1 .text-2, .section-3 > .text-container  { font-size: 1.8rem; }
 }
 /* ------------------------------------------------------------ */
 /* 백그라운드 이미지 */
-#bg-container {
-    width: 100%; height: 40vh;
-    display: flex; align-items: flex-end;
-}
 .bg-img {
+    margin-top: 50px;
     width: 100%; height: 30vh;
     position: relative;
     background-color: rgba(0, 0, 0, 0.4);
@@ -187,20 +186,18 @@ body { background-color: #F6F6F6; font-family: 'Sejonghospital'; }
 }
 /* ------------------------------------------------------------ */
 /* 섹션-2 */
-.section-2, .section-3 {
-    display: flex; flex-direction: column; align-items: center;
-}
 /* 섹션-2 책 컨테이너*/
 #book-container {
-    position: relative;
     width: 90%; height: 50vh;
+    margin: 50px 0;
+    position: relative;
     perspective: 1000px;
     transition: var(--size-transition);
 }
 /* 책 겹치기 */
 #book-container > .page {
-    position: absolute; top: 0; left: 50%;
-    height: 80%; overflow: hidden;
+    height: 100%; position: absolute; 
+    top: 0; left: 50%;
 }
 /* 책 이미지 */
 #book-container > .page > img {
@@ -222,64 +219,56 @@ body { background-color: #F6F6F6; font-family: 'Sejonghospital'; }
 #book-container > #page-2 > img {
     opacity: 0.1;
 }
-/* 텍스트 영역 (책의 높이,컨테이너 너비와 같게 하여 중간 정렬)*/
+/* 텍스트 영역 */
 #book-container > .book-text {
     position: absolute; top: 0; right: 0;
-    height: 80%; width: 100%;
+    height: 100%; width: 100%;
     display: flex; align-items: center; justify-content: center;
 }
 #book-container > .book-text > p {
     transform: scale(0);
     transition: transform 0.8s ease-out , font-size 1.2s ease;
-    font-size: 1.25rem; line-height: 1.5rem;
     z-index: 99;
 }
 /* 클릭 버튼 */
 .book-click {
     position: absolute;
-    bottom: 30px; left: 50%;
-    display: inline-block;
+    top:50%; left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 1.5rem; font-weight: bold;
     z-index: 99;
+    animation: move-the-sign 1.5s infinite;
 }
 /* 클릭 버튼 모션 */
 .book-click > span > i {
-    opacity: 0;
     color: #2457BD;
-    animation: move-the-sign 1.5s infinite;
 }
 @keyframes move-the-sign {
     0% {
-        transform: translate(0, 0); opacity: 0;
+        transform: translate(-100px, 0); opacity: 0;
     }
     50% {
-        transform: translate(0, -10px); opacity: 1;
+        transform: translate(-90px, 0); opacity: 1;
     }
     100% {
-        transform: translate(0, 0); opacity: 0;
+        transform: translate(-100px, 0); opacity: 0;
     }
 }
 /* 섹션-2 미디어 쿼리 */
 @media screen and (min-width:600px) {
+    #book-container { max-width: 1200px; }
     #book-container > .book-text > p {
-        font-size: 1.5rem; line-height: 1.75rem;
+        font-size: 1.4rem;
     }
 }
 /* ------------------------------------------------------------ */
 /* 섹션-3 */
-/* 파트너 */
-#partners {
-    width: 100%; height: 30vh; overflow: hidden; position: relative;
-    display: flex; flex-direction: column; 
-    justify-content: space-evenly; align-items: center;
-    margin-top: 100px;
-}
 /* 삼각형 배경 */
-#partners::after {
+#partners-t-img {
     content: "";
     position: absolute;
     top: 0; left: 0;
-    width: 100%; height: 100%;
+    width: 100%; height: 30vh;
     background-color: #e9ebef;
     clip-path: polygon(100% 0, 100% 100%, 0 0);
     z-index: -99;
@@ -290,30 +279,47 @@ body { background-color: #F6F6F6; font-family: 'Sejonghospital'; }
     clip-path: polygon(100% 100%, 0 100%, 0 0);
     z-index: -99;
 }
+/* 파트너 */
+#partners {
+    width: 90%; height: 30vh;
+    display: flex; flex-direction: column; 
+    align-items: center;
+    margin-top: 50px;
+}
 /* 타이틀 */
 #partners > p {
     color: #2457BD;
+    font-size: 1.5rem;
 }
 /* 로고 */
 #partners > .logo-container {
-    width: 90%; height: 50%;
-    display: flex; justify-content: space-evenly; align-items: center;
+    margin-top: 50px;
+    width: 100%; height: 60%;
+    display: flex; flex-wrap: wrap; 
+    align-content: space-between;
 }
-#partners > .logo-container > img {
-    width: 40%; height: 50%;
+#partners > .logo-container > div {
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; height: 40%;
+}
+#partners > .logo-container > div > img {
+    width: 70%; height: 100%;
     object-fit: contain;
 }
 /* 섹션-3 description */
 .section-3 > .description { 
-    display: flex; flex-wrap: wrap;
     margin-top: 50px;
-    width: 90%;
+}
+.section-3 > .description > p { 
     transition: var(--font-transition);
 }
  /* 섹션-3 미디어쿼리 */
-@media screen and (min-width:1200px) {
-    .section-3 > .description { 
-        width: 50%;
+@media screen and (min-width:600px) {
+    #partners > .logo-container > div {
+        width: 50%; height: 50%;
+    }
+    .section-3 > .description > p {
+        font-size: 1.4rem;
     }
 }
 
@@ -321,18 +327,20 @@ body { background-color: #F6F6F6; font-family: 'Sejonghospital'; }
 #footer {
     width: 100%;
     background-color: #a3ccf4;
-    padding: 24px 0;
+    padding: 16px 0;
+    display: flex; justify-content: center;
 }
 .footer-wrap {
-    display: flex; align-items: center; justify-content: space-evenly;
-    flex-wrap: wrap;
-    width: 100%; height: 100%;
+    width: 90%;
+    display: flex; flex-wrap: wrap;
+    align-items: center; justify-content: space-evenly;
     font-family: 'TheJamsil5';
 }
     .footer-wrap > .title > span {
         color: #2457BD; font-size: 1.5rem;
     }
     .footer-wrap > .text-container {
+        padding: 10px 10px;
         display: flex; flex-direction: column;
     }
     .footer-wrap > .text-container > p {

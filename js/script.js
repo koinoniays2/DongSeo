@@ -1,19 +1,4 @@
-window.addEventListener("load", () => {
-    // 로딩이 완료되면 로딩 화면 숨기기
-    const loadingContainer = document.querySelector("#loading-screen");
-    // setTimeout(() => {
-        loadingContainer.style.display = "none";
-        // 비디오 애니메이션 실행
-        videoTextAni();
-        // 섹션-1 애니메이션 실행
-        sectionAni1();
-        // 섹션-2 애니메이션 실행
-        sectionAni2()
-        // Partners 애니메이션 실행
-        sectionAni3();
-    // }, 1000);
-});
-// 스크롤 이벤트
+// 스크롤 이벤트(헤더)
 window.addEventListener("scroll", function () {
     // 스크롤 위치가 맨 위로 올라갔을 때 헤더 보이기
     const scrollPosition = window.scrollY || document.documentElement.scrollTop;
@@ -26,6 +11,7 @@ window.addEventListener("scroll", function () {
     topButtonScroll();
 });
 // 휠 이벤트
+const checkbox = document.querySelector("#toggle-btn");
 window.addEventListener("wheel", (e) => {
     if(0 < e.deltaY) {
         header.style.transform ="translateY(-100%)";
@@ -42,6 +28,7 @@ window.addEventListener("touchmove", function (e) {
     var deltaY = startY - e.touches[0].clientY;
     if (deltaY > 0) {
         header.style.transform = "translateY(-100%)";
+
     } else if (deltaY < 0 ) {
         header.style.transform = "translateY(0)";
     }
@@ -50,31 +37,45 @@ window.addEventListener("touchmove", function (e) {
 // --------------------헤더--------------------
 const header = document.getElementById("header");
 const headerLogo = document.querySelector("#logo a");
-const headerToggle = document.querySelector("#toggle-icon i");
+const headerToggle = document.querySelector("#toggle-on i");
 const section1 = document.querySelector(".section-1");
+const menuText = document.querySelectorAll("#header ul li a");
 function headerScroll() {
     const section = section1.getBoundingClientRect();
     if (section.top <= 0) {
-        header.style.backgroundColor = "rgba(246, 246, 246, 0.5)";
+        header.style.backgroundColor = "#F6F6F6";
         headerLogo.style.color = "#2457BD";
         headerToggle.style.color = "#2457BD";
+        menuText.forEach((item) => {
+            item.style.color = "#2457BD";
+        });
     } else {
         // 스타일 초기화
         header.style.backgroundColor = "transparent";
         headerLogo.style.color = "#F6F6F6";
         headerToggle.style.color = "#F6F6F6";
+        menuText.forEach((item) => {
+            item.style.color = "#b0b0b0";
+        });
     }
 }
+// 토글 버튼
+const toggleButton = document.querySelector("#toggle-on");
+const toggleMenu = document.querySelector("#header ul");
+toggleButton.addEventListener("click", () => {
+    toggleMenu.classList.toggle("menu-on");
+});
 // --------------------탑버튼--------------------
-const topButton = document.getElementById("top-btn");
+const topButton = document.querySelector("#top-btn a");
 const videoSection = document.querySelector("#video-container");
-const videoSectionBottom = videoSection.getBoundingClientRect().bottom;
 function topButtonScroll() {
-    const section = section1.getBoundingClientRect();
-    if(section.top < videoSectionBottom) {
+    const videoSectioTop = videoSection.getBoundingClientRect().top;
+    if(0 > videoSectioTop) {
         topButton.style.opacity = 1;
+        topButton.style.transform = "scale(1)";
     }else {
         topButton.style.opacity = 0;
+        topButton.style.transform = "scale(0)";
     }
 }
 // --------------------섹션-video--------------------
@@ -210,4 +211,3 @@ function sectionAni3() {
     });
     ScrollTrigger.refresh();
 }
-//--------------------탑버튼--------------------

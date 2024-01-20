@@ -18,6 +18,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <!-- 지도api -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e6541d59197514215349b9b2b616b694"></script>
     <title>동서한약</title>
 </head>
 <body>
@@ -39,26 +41,23 @@
         <nav>
             <div id="logo">
                 <a href="#">
-                    <!-- <img src="images/logo.svg" alt="logo" /> -->
                     동 서 한 약
                 </a>
-            </div>
-            <input id="toggle-btn" type="checkbox"/>
-            <!-- <ul id="toggle-menu">
-                <li><a href="#">메뉴</a></li>
-                <li><a href="#">메뉴</a></li>
-                <li><a href="#">메뉴</a></li>
-            </ul> -->
-            <label id="toggle-icon" for="toggle-btn">
-                <div>
+                <label id="toggle-on" for="toggle-btn">
                     <i class="fa-solid fa-bars"></i>
-                </div>
-            </label>
+                </label>
+            </div>
+            <ul>
+                <li><a href="#">업체소개</a></li>
+                <li><a href="#">사상체질</a></li>
+                <li><a href="#">협력업체</a></li>
+                <li><a href="#">오시는길</a></li>
+            </ul>
         </nav>
     </header>
     <section id="video-container">
         <video id="video" autoplay loop muted>
-            <source src="images/국화.mp4" type="video/mp4"/>
+            <source src="images/hub.mp4" type="video/mp4"/>
         </video>
         <div id="overlay"></div>
         <div id="text-container">
@@ -169,6 +168,11 @@
         </article>
         <div id="partners-b-img"></div>
     </section>
+    <!-- <section class="section section-4">
+        <div>
+            <div id="map"></div>
+        </div>
+    </section> -->
     <!-- ------------푸터------------------------------------ -->
     <footer id="footer">
         <article class="footer-wrap">
@@ -192,6 +196,8 @@
     </footer>
     <!-- ------------탑버튼------------------------------------ -->
     <div id="top-btn"><a href="#"><i class="fa-solid fa-angles-up"></i></a></div>
+    <!-- JS -->
     <script src="js/script.js"></script>
+    <script src="js/windowLoad.js"></script>
 </body>
 </html>

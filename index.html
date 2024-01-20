@@ -9,6 +9,10 @@
     <!-- gsap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+    <!-- Black Han Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
     <title>동서한약</title>
 </head>
 <body>
@@ -30,7 +34,7 @@
         <nav>
             <div id="logo">
                 <a href="#">
-                    <img src="images/logo.svg" alt="logo" />
+                    <!-- <img src="images/logo.svg" alt="logo" /> -->
                     동 서 한 약
                 </a>
             </div>
@@ -47,6 +51,16 @@
             </label>
         </nav>
     </header>
+    <section id="video-container">
+        <video id="video" autoplay loop muted>
+            <source src="images/hub.mp4" type="video/mp4"/>
+        </video>
+        <div id="overlay"></div>
+        <div id="text-container">
+            <span>건강한 내일,</span>
+            <span>동서한약</span>
+        </div>
+    </section>
     <!-- ------------섹션-1------------------------------------ -->
     <section class="section section-1">
         <!-- 타이틀 -->
@@ -171,6 +185,7 @@
             </div>
         </article>
     </footer>
+    <!-- ------------탑버튼------------------------------------ -->
     <div id="top-btn"><a href="#"><i class="fa-solid fa-angles-up"></i></a></div>
     <script src="js/script.js"></script>
 </body>

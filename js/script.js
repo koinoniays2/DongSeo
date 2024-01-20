@@ -1,33 +1,80 @@
 window.addEventListener("load", () => {
     // 로딩이 완료되면 로딩 화면 숨기기
     const loadingContainer = document.querySelector("#loading-screen");
-    setTimeout(() => {
+    // setTimeout(() => {
         loadingContainer.style.display = "none";
-        // 헤더 애니메이션
-        headerAni();
+        // 비디오 애니메이션 실행
+        videoTextAni();
         // 섹션-1 애니메이션 실행
         sectionAni1();
         // 섹션-2 애니메이션 실행
         sectionAni2()
         // Partners 애니메이션 실행
         sectionAni3();
-    }, 1000);
+    // }, 1000);
 });
-
-gsap.registerPlugin(ScrollTrigger);
+// 스크롤 이벤트
+window.addEventListener("scroll", function () {
+    headerScroll();
+    topButtonScroll();
+});
+// 휠 이벤트
+window.addEventListener("wheel", (e) => {
+    if(0 < e.deltaY) {
+        header.style.transform ="translateY(-100%)";
+    }else {
+        header.style.transform = "translateY(0)";
+    }
+})
 // --------------------헤더--------------------
-const header = document.querySelector("#header");
-function headerAni() {
-    gsap.to(header, {
-        backgroundColor: "rgba(246, 246, 246, 0.6)",
-        scrollTrigger : {
-            trigger: "header",
-            start: "top+=50px top",
-            scrub: true
+const header = document.getElementById("header");
+const headerLogo = document.querySelector("#logo a");
+const headerToggle = document.querySelector("#toggle-icon i");
+const section1 = document.querySelector(".section-1");
+function headerScroll() {
+    const section = section1.getBoundingClientRect();
+    if (section.top <= 0) {
+        header.style.backgroundColor = "rgba(246, 246, 246, 0.5)";
+        headerLogo.style.color = "#2457BD";
+        headerToggle.style.color = "#2457BD";
+    } else {
+        // 스타일 초기화
+        header.style.backgroundColor = "transparent";
+        headerLogo.style.color = "#F6F6F6";
+        headerToggle.style.color = "#F6F6F6";
+    }
+}
+// --------------------탑버튼--------------------
+const topButton = document.getElementById("top-btn");
+const videoSection = document.querySelector("#video-container");
+const videoSectionBottom = videoSection.getBoundingClientRect().bottom;
+function topButtonScroll() {
+    const section = section1.getBoundingClientRect();
+    if(section.top < videoSectionBottom) {
+        topButton.style.opacity = 1;
+    }else {
+        topButton.style.opacity = 0;
+    }
+}
+// 탑버튼 클릭 시 헤더 보이기
+topButton.addEventListener("click", function() {
+    header.style.transform = "translateY(0)";
+});
+// --------------------섹션-video--------------------
+const videoText = document.querySelectorAll("#text-container > span");
+function videoTextAni() {
+    gsap.from(videoText, {
+        y: 50,
+        opacity: 0,        
+        duration: 1,
+        delay: 0.5,
+        stagger: {
+            each: 0.5
         }
     })
 }
 // --------------------섹션-1--------------------
+gsap.registerPlugin(ScrollTrigger);
 const sectionTitleSpan1 = document.querySelectorAll(".section-1 > .title > span");
 const sectionTitleP1 = document.querySelectorAll(".section-1 > .title > p");
 const rotateImg = document.querySelectorAll(".img-container > div");
@@ -37,7 +84,7 @@ function sectionAni1() {
     // 타이틀 애니
     tl.from(sectionTitleSpan1, {
         opacity: 0, y: -10, duration: 0.5,
-        yoyo: true, stagger: { from: 'center', each: 0.1 }
+        stagger: { from: 'center', each: 0.1 }
     })
         .fromTo(sectionTitleP1, { opacity: 0, y: 50 }, {
             opacity: 1, y: 0, duration: 1, stagger: 0.2
@@ -146,3 +193,4 @@ function sectionAni3() {
     });
     ScrollTrigger.refresh();
 }
+//--------------------탑버튼--------------------

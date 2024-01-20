@@ -26,6 +26,20 @@ window.addEventListener("wheel", (e) => {
         header.style.transform = "translateY(0)";
     }
 })
+// 휴대폰 휠 이빈트
+let startY;
+window.addEventListener("touchstart", function (e) {
+    startY = e.touches[0].clientY;
+});
+window.addEventListener("touchmove", function (e) {
+    var deltaY = startY - e.touches[0].clientY;
+    if (deltaY > 0) {
+        header.style.transform = "translateY(-100%)";
+    } else if (deltaY < 0) {
+        header.style.transform = "translateY(0)";
+    }
+    startY = e.touches[0].clientY;
+});
 // --------------------헤더--------------------
 const header = document.getElementById("header");
 const headerLogo = document.querySelector("#logo a");

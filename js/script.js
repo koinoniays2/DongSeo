@@ -15,7 +15,14 @@ window.addEventListener("load", () => {
 });
 // 스크롤 이벤트
 window.addEventListener("scroll", function () {
+    // 스크롤 위치가 맨 위로 올라갔을 때 헤더 보이기
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    if (scrollPosition === 0) {
+        header.style.transform = "translateY(0)";
+    }
+    // 헤더 스타일 변경
     headerScroll();
+    // 탑버튼 보이기
     topButtonScroll();
 });
 // 휠 이벤트
@@ -35,7 +42,7 @@ window.addEventListener("touchmove", function (e) {
     var deltaY = startY - e.touches[0].clientY;
     if (deltaY > 0) {
         header.style.transform = "translateY(-100%)";
-    } else if (deltaY < 0) {
+    } else if (deltaY < 0 ) {
         header.style.transform = "translateY(0)";
     }
     startY = e.touches[0].clientY;
@@ -70,10 +77,6 @@ function topButtonScroll() {
         topButton.style.opacity = 0;
     }
 }
-// 탑버튼 클릭 시 헤더 보이기
-topButton.addEventListener("click", function() {
-    header.style.transform = "translateY(0)";
-});
 // --------------------섹션-video--------------------
 const videoText = document.querySelectorAll("#text-container > span");
 function videoTextAni() {

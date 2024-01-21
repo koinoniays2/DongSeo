@@ -34,7 +34,16 @@
 #toggle-menu > ul:nth-child(2) > li > a {
     color: #F6F6F6;
 }
+#header.menuon {
+    background-color: rgba(246, 246, 246, 0.9);
+}
+#header.menuon #logo a,
+#header.menuon #toggle-menu ul li a,
+#header.menuon #toggle-on i {
+    color: #2457BD;
+}
 
+/* 피씨 메뉴 */
     #header nav { 
         width: 90%;
         display: flex; justify-content: space-between;
@@ -121,6 +130,31 @@
     line-height: 3rem;
     transition: var(--font-transition);
 }
+#scroll {
+    position: absolute; bottom: 0; left: 0;
+    width: 100%; display: flex; justify-content: center;
+    margin-bottom: 20px;
+}
+#scroll i {
+    color: #F6F6F6; margin-left: 5px;
+    animation: scrollAni 1.5s infinite;
+    transition: var(--font-transition);
+}
+#scroll span {
+    color: #F6F6F6;
+    transition: var(--font-transition);
+}
+@keyframes scrollAni {
+    0% {
+        transform: translate(0, -5px);
+    }
+    50% {
+        transform: translate(0, 5px);
+    }
+    100% {
+        transform: translate(0,-5px);
+    }
+}
 /* 헤더 미디어 쿼리 */
 @media screen and (min-width:768px) {
     #header #logo a, #header #toggle-on i {
@@ -144,5 +178,8 @@
 @media screen and (min-width:1024px) {
     #text-container span {
         font-size: 3rem;
+    }
+    #scroll i, #scroll span {
+        font-size: 1.5rem;
     }
 }

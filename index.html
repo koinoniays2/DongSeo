@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css -->
+    <link href="css/init.css" rel="stylesheet" type="text/css" />
     <link href="css/index_style.css" rel="stylesheet" type="text/css" />
     <link href="css/index_header_video.css" rel="stylesheet" type="text/css" />
     <link href="css/index_section-1.css" rel="stylesheet" type="text/css" />
@@ -18,7 +19,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
-    <!-- 지도api -->
     <!-- 제이쿼리 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>동서한약</title>
@@ -50,7 +50,7 @@
                     <li><a href="#intro">업체소개</a></li>
                     <li><a href="#sasang">사상체질</a></li>
                     <li><a href="#partner">협력업체</a></li>
-                    <li><a href="#">오시는길</a></li>
+                    <li><a href="address.html">오시는길</a></li>
                 </ul>
             </div>
             <div id="login-menu">
@@ -72,18 +72,22 @@
                 <li><a href="#intro">업체소개</a></li>
                 <li><a href="#sasang">사상체질</a></li>
                 <li><a href="#partner">협력업체</a></li>
-                <li><a href="#">오시는길</a></li>
+                <li><a href="address.html">오시는길</a></li>
             </ul>
         </div>
     </header>
     <section id="video-container">
         <video id="video" autoplay loop muted>
-            <source src="images/hub.mp4" type="video/mp4"/>
+            <source src="images/녹용.mp4" type="video/mp4"/>
         </video>
         <div id="overlay"></div>
         <div id="text-container">
-            <span>건강한 내일을 위해,&nbsp</span>
+            <span>기원과 동행하는,&nbsp</span>
             <span>동서한약</span>
+        </div>
+        <div id="scroll">
+            <span>Scroll</span>
+            <i class="fa-solid fa-angles-down"></i>
         </div>
     </section>
     <!-- ------------섹션-1------------------------------------ -->
@@ -179,8 +183,12 @@
                     <img src="images/옴니허브.png" alt="옴니허브 로고"/>
                 </div>
                 <div>
+                    <img src="images/바이오닷.png" alt="바이오닷 로고"/>
+                </div>
+                <div>
                     <img src="images/휴먼허브.png" alt="휴면허브 로고"/>
                 </div>
+                
             </div>
         </div>
         <article class="description">
@@ -189,11 +197,6 @@
         </article>
         <div id="partners-b-img"></div>
     </section>
-    <!-- <section class="section section-4">
-        <div>
-            <div id="map"></div>
-        </div>
-    </section> -->
     <!-- ------------푸터------------------------------------ -->
     <footer id="footer">
         <article class="footer-wrap">
@@ -218,7 +221,7 @@
     <!-- ------------탑버튼------------------------------------ -->
     <div id="top-btn"><a href="#"><i class="fa-solid fa-angles-up"></i></a></div>
     <!-- JS -->
-    <script src="js/script.js"></script>
-    <script src="js/windowLoad.js"></script>
+    <script src="js/index_script.js"></script>
+    <script src="js/index_windowLoad.js"></script>
 </body>
 </html>

@@ -1,46 +1,89 @@
 /* 헤더 */
 #header {
-    width: 100%;
+    width: 100%; padding: 16px 0;
     position: fixed; top: 0; left: 0; z-index: 99;
     display: flex; flex-direction: column;
     justify-content: center; align-items: center;
     font-family: 'TheJamsil5';
     transition-duration: 1s;
 }
+/* 토글 메뉴 */
+#toggle-menu {
+    width: 100%;
+    display: none;
+}
+#toggle-menu > ul:nth-child(1) {
+    display: flex; justify-content: flex-end;
+    width: 90%;
+}
+#toggle-menu > ul:nth-child(1) > li {
+    padding: 16px 16px;
+}
+#toggle-menu > ul:nth-child(1) > li > a {
+    color: #F6F6F6;
+    font-size: 0.625rem;
+}
+#toggle-menu > ul:nth-child(2) {
+    display: flex;  flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+#toggle-menu > ul:nth-child(2) > li {
+    padding: 16px 0;
+}
+#toggle-menu > ul:nth-child(2) > li > a {
+    color: #F6F6F6;
+}
+
     #header nav { 
-        width: 90%; margin-top: 16px;
-        display: flex; flex-wrap: wrap;
-    }
-    #header nav #logo {
-        width: 100%;
+        width: 90%;
         display: flex; justify-content: space-between;
     }
-    #header #logo a, #header #toggle-on i {
+    #logo {
+        display: flex; align-items: center;
+    }
+    /* 메인 메뉴 */
+    #main-menu {
+        display: none; align-items: center;
+        flex-grow: 1;
+    }
+    #main-menu > ul {
+        display: flex; width: 100%;
+        justify-content: center;
+    }
+    #main-menu > ul > li {
+        text-align: center;
+    }
+    #main-menu > ul > li > a {
+        display: block;
+        padding: 0 24px; text-align: center;
+    }
+    /* 로그인 메뉴 */
+    #login-menu {
+        display: none; align-items: center; justify-content: center;
+    }
+    #login-menu > ul {
+        display: flex; 
+    }
+    #login-menu > ul > li > a{
+        display: block;
+        padding: 0 8px; font-size: 0.625rem;
+    }
+
+    /* 텍스트 컬러 */
+    #main-menu > ul > li > a, #login-menu > ul > li > a {
+        color: #F6F6F6;
+    }
+    #header #logo > a, #header #toggle-on i {
         color: #F6F6F6; font-size: 1.5rem;
         cursor: pointer;
         transition: var(--font-transition);
     }
-/* 메뉴 */
-#header ul {
-    margin-top: 16px; height: 0;
-    overflow: hidden;
-    transition: height 1s; 
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    flex-grow: 1;
-}
-#header li {
-    flex-grow: 1; text-align: center;
-}
-#header ul a{
-    display: block;
-    color: #b0b0b0;
-    padding: 16px 0;
-    transition: var(--font-transition);
-}
-#header ul.menu-on {
-    height: 200px;
-}
+    #header ul li:hover {
+        transform: scale(1.2);
+        transition-duration: 0.5s;
+    }
+
 /* 비디오 */
 #video-container {
     position: relative;
@@ -84,18 +127,10 @@
         font-size: 1.8rem;
     }
     #header nav { max-width: 1300px; }
-    #header label { display: none; }
-    #header nav #logo {
-        width: auto;
-    }
-    #header ul {
-        height: auto !important;
-        flex-direction: row !important;
-        margin: 0 !important;
-    }
-    #header ul a{
-        padding: 0;
-    }
+    #header #toggle-on { display: none; }
+    #toggle-menu { display: none !important; }
+    #main-menu { display: flex; }
+    #login-menu { display: flex; }
 }
 /* 비디오 미디어 쿼리 */
 @media screen and (min-width:768px) {

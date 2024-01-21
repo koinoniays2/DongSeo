@@ -40,9 +40,10 @@ const headerLogo = document.querySelector("#logo a");
 const headerToggle = document.querySelector("#toggle-on i");
 const section1 = document.querySelector(".section-1");
 const menuText = document.querySelectorAll("#header ul li a");
+const videoHeigth = document.querySelector("#video-container").getBoundingClientRect().height;
 function headerScroll() {
     const section = section1.getBoundingClientRect();
-    if (section.top <= 0) {
+    if (section.top <= videoHeigth-50) {
         header.style.backgroundColor = "#F6F6F6";
         headerLogo.style.color = "#2457BD";
         headerToggle.style.color = "#2457BD";
@@ -55,16 +56,21 @@ function headerScroll() {
         headerLogo.style.color = "#F6F6F6";
         headerToggle.style.color = "#F6F6F6";
         menuText.forEach((item) => {
-            item.style.color = "#b0b0b0";
+            item.style.color = "#F6F6F6";
         });
     }
 }
 // 토글 버튼
-const toggleButton = document.querySelector("#toggle-on");
-const toggleMenu = document.querySelector("#header ul");
-toggleButton.addEventListener("click", () => {
-    toggleMenu.classList.toggle("menu-on");
+$(document).ready(function() {
+    $("#toggle-on").click(function(event){
+        $("#toggle-menu").slideToggle();
+        event.stopPropagation(); 
+    });
+    $(document).click(function() {
+        $("#toggle-menu").slideUp();
+    });
 });
+
 // --------------------탑버튼--------------------
 const topButton = document.querySelector("#top-btn a");
 const videoSection = document.querySelector("#video-container");

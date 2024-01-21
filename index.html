@@ -19,7 +19,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
     <!-- 지도api -->
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e6541d59197514215349b9b2b616b694"></script>
+    <!-- 제이쿼리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>동서한약</title>
 </head>
 <body>
@@ -43,17 +44,37 @@
                 <a href="#">
                     동 서 한 약
                 </a>
-                <label id="toggle-on" for="toggle-btn">
-                    <i class="fa-solid fa-bars"></i>
-                </label>
             </div>
+            <div id="main-menu">
+                <ul>
+                    <li><a href="#intro">업체소개</a></li>
+                    <li><a href="#sasang">사상체질</a></li>
+                    <li><a href="#partner">협력업체</a></li>
+                    <li><a href="#">오시는길</a></li>
+                </ul>
+            </div>
+            <div id="login-menu">
+                <ul>
+                    <li><a href="#">JOIN</a></li>
+                    <li><a href="#">LOGIN</a></li>
+                </ul>
+            </div>
+            <div id="toggle-on">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+        <div id="toggle-menu">
             <ul>
-                <li><a href="#">업체소개</a></li>
-                <li><a href="#">사상체질</a></li>
-                <li><a href="#">협력업체</a></li>
+                <li><a href="#">JOIN</a></li>
+                <li><a href="#">LOGIN</a></li>
+            </ul>
+            <ul>
+                <li><a href="#intro">업체소개</a></li>
+                <li><a href="#sasang">사상체질</a></li>
+                <li><a href="#partner">협력업체</a></li>
                 <li><a href="#">오시는길</a></li>
             </ul>
-        </nav>
+        </div>
     </header>
     <section id="video-container">
         <video id="video" autoplay loop muted>
@@ -66,7 +87,7 @@
         </div>
     </section>
     <!-- ------------섹션-1------------------------------------ -->
-    <section class="section section-1">
+    <section class="section section-1" id="intro">
         <!-- 타이틀 -->
         <article class="title">
             <span>D</span>
@@ -113,7 +134,7 @@
         <div class="bg-img"></div>
     </section>
     <!-- ------------섹션-2------------------------------------ -->
-    <section class="section section-2">
+    <section class="section section-2" id="sasang">
         <!-- 타이틀 -->
         <article class="title">
             <span>O</span>
@@ -149,7 +170,7 @@
         </article>
     </section>
     <!-- ------------섹션-3------------------------------------ -->
-    <section class="section section-3">
+    <section class="section section-3" id="partner">
         <div id="partners-t-img"></div>
         <div id="partners">
             <p>P A R T N E R S</p>

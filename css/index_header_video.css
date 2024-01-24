@@ -34,6 +34,7 @@
 #toggle-menu > ul:nth-child(2) > li > a {
     color: #F6F6F6;
 }
+/* 토글메뉴 클릭 시 로고, 메뉴, 백그라운드 색상 설정 클래스*/
 #header.menuon {
     background-color: rgba(246, 246, 246, 0.9);
 }

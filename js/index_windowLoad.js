@@ -1,6 +1,6 @@
 window.addEventListener("load", () => {
     const loadingContainer = document.querySelector("#loading-screen");
-    // setTimeout(() => {
+    // setTimeout(() => { 로딩 화면 확인을 위한 임시 setTimeout 함수
         // 로딩이 완료되면 로딩 화면 숨기기
         loadingContainer.style.display = "none";
         // 비디오 애니메이션 실행

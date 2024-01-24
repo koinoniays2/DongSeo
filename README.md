@@ -9,7 +9,7 @@
 - PC, 노트북, 태블릿, 스마트폰 등 다양한 플랫폼을 위한 반응형웹 구현
 # 스타일 가이드
 - COLOR  
-배경색 F6F6F6, 강조색 $\bf{\large{\color{#2457BD}2457BD}}$ $\bf{\large{\color{#5A8DF3}5A8DF3}}$
+배경색 F6F6F6, 글자색 353535, 강조색 $\bf{\large{\color{#2457BD}2457BD}}$
 - FONT  
 header,footer 더잠실체, body 세종병원체
 ---

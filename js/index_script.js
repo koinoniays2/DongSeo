@@ -108,6 +108,7 @@ const sectionTitleSpan1 = document.querySelectorAll(".section-1 > .title > span"
 const sectionTitleP1 = document.querySelectorAll(".section-1 > .title > p");
 const rotateImg = document.querySelectorAll(".img-container > div");
 const sectionDescription1 = document.querySelector(".section-1 .description > p");
+const gridText = document.querySelector(".grid-text");
 function sectionAni1() {
     const tl = gsap.timeline();
     // 타이틀 애니
@@ -122,8 +123,10 @@ function sectionAni1() {
         .fromTo(rotateImg, { opacity: 0, rotateY: 180 }, {
             opacity: 1, rotateY: 0, duration: 1, stagger: 0.2, ease: Power2.easeInOut
         }, "-=0.8")
+    // 그리드 텍스트
+        .from(gridText, {  width: 0, duration: 3 }, "-=0.8")
     // 내용 애니
-        .from(sectionDescription1, { opacity: 0, y: 50, duration: 1 }, "-=0.6");
+        .from(sectionDescription1, { opacity: 0, y: 50, duration: 1 }, "-=2.2");
     ScrollTrigger.create({
         trigger: ".section-1",
         start: "top center",

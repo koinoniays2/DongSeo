@@ -46,11 +46,13 @@
 }
 .description p {
     transition: var(--font-transition);
+    line-height: 1.5rem;
 }
 
 @media screen and (min-width:768px) {
     .section .description > p { 
-        font-size: 1.25rem; }
+        font-size: 1.25rem;
+        line-height: 1.75rem; }
 }
 @media screen and (min-width:1024px) {
     #img-container img {

@@ -53,7 +53,7 @@
 .grid-text { 
     width: 100%;
     position: absolute;
-    bottom: -24px; left: 50%;
+    bottom: -32px; left: 50%;
     transform: translateX(-50%);
 }
 .img-text {

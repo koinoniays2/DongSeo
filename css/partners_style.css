@@ -2,7 +2,7 @@
     display: flex; flex-direction: column; 
     justify-content: center; align-items: center;
     width: 100%;
-    margin-top: 56px;
+    margin: 128px 0;
 }
 /* 상단 이미지 */
 #img-container {
@@ -18,14 +18,14 @@
     color: #8C8C8C;
     font-size: 0.75rem;
     text-align: center;
-    margin-top: 8px;
+    margin-top: 24px;
     font-weight: bold;
 }
 /* 캐러샐 */
 .swiper {
     width: 90%;
     max-width: 400px;
-    margin: 56px 0;
+    margin: 72px 0;
 }
 .swiper img {
     width: 100%;
@@ -42,7 +42,7 @@
 }
 /* 하단 텍스트 */
 .description {
-    margin: 0 16px 56px 16px;
+    margin: 0 16px;
 }
 .description p {
     transition: var(--font-transition);

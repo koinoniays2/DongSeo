@@ -5,7 +5,7 @@
 .address-text {
     width: 90%;
     max-width: 1300px;
-    margin-top: 56px;
+    margin-top: 128px;
     display: flex; flex-direction: column; align-items: flex-start;
 }
 .address-text h1 {
@@ -25,7 +25,7 @@
     width: 100%; height: 50vh;
 }
 .address-description {
-    margin-top: 16px;
+    margin-top: 16px; margin-bottom: 64px;
     display: flex; flex-wrap: wrap;
     justify-content: space-evenly;
 }
